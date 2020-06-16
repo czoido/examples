@@ -118,6 +118,7 @@ def get_conan_env(script):
     temp_folder = os.path.join(tempfile.gettempdir(), str(uuid.uuid4())[:4])
     os.environ["CONAN_USER_HOME"] = temp_folder
     logging.debug("CONAN_USER_HOME: {}".format(temp_folder))
+    os.environ["CONAN_SYSREQUIRES_MODE"] = "enabled"
     return os.environ
 
 
