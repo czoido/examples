@@ -86,7 +86,7 @@ def get_examples_to_skip(current_version):
 
 def get_build_list():
     skip_examples = get_examples_to_skip(current_version=version.parse(conan_version))
-
+    print(skip_examples)
     builds = []
     script = "build.bat" if platform.system() == "Windows" else "build.sh"
     skip_folders = [os.path.normpath(it) for it in ['./.ci', './.git', './.tox']]
